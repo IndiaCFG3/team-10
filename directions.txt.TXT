@@ -1,0 +1,9 @@
+*html pages should be kept here*
+team10-->templates-->yourfile.html
+NOTE:keep the landing page in index.html
+
+*css files *
+team10-->static-->css
+
+*images*(any uploaded images should be kept here)
+team10-->static-->images
