@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.models import User,auth
-from .models import adminSignup,userSignup
+from .models import adminSignup,userSignup,courses
 
 # Create your views here.
 def index(request):
@@ -111,6 +111,18 @@ def profile(request):
     return render(request,'profile.html',{'u1':u1})
 def schedule(request):
     return render(request,'schedule.html')
+def coursedetails(request):
+    if request.method =='POST':
+        coursename=request.POST['coursename']
+        coursedescription=request.POST['coursedescription']
+        videolink=request.POST['videolink']
+        pdfdrivelink=request.POST['pdfdrivelink']
+        category=request.POST['category']
+        courses.objects.create(coursename=coursename,description=coursedescription,videolink=videolink,pdfdrivelink=pdfdrivelink,category=category)
+        messages.info(request,'uploaded')
+        return redirect('index')
+    else:
+        return render(request,'index.html')
 def logout(request):
     auth.logout(request)
     return redirect('/')

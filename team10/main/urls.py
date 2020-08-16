@@ -11,4 +11,5 @@ urlpatterns=[
     path('profile',views.profile,name='profile'),
     path('schedule',views.schedule,name='schedule'),
     path('logout',views.logout,name='logout'),
+    path('coursedetails',views.coursedetails,name='coursedetails'),
 ]
