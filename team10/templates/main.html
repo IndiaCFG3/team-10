@@ -37,11 +37,13 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a href="main.html" disabled>home</a></li>
+        <li><a href="{% url 'main' %}" disabled>home</a></li>
         <li><a href="#">about</a></li>
-        <li><a href="#contact">contact</a></li>
-        <li><a href="profile.html"> profile </a></li>
-        <li><a href="index.html">sign out </a> </li>
+
+        <li><a href="#">contact</a></li>
+        <li><a href="{% url 'profile' %}"> profile </a></li>
+        <li><a href="{% url 'logout' %}">sign out </a> </li>
+
       </ul>
     </div>
   </div>
@@ -84,7 +86,9 @@
       <img class="thumbnail" src="https://midtowntrainers.com/wp-content/uploads/2018/10/simpleicons_business_calendar-with-plus-sign-svg_-400x400.png">
       <h5>Schedule</h5>
       <p>live sessions</p>
-      <a href="schedule.html" class="button expanded btn-success">Choose</a>
+
+      <a href="{% url 'schedule' %}" class="button expanded">Choose</a>
+
     </div>
 
   </div>

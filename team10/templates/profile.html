@@ -34,11 +34,11 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a href="main.html">home</a></li>
+        <li><a href="{% url 'main' %}">home</a></li>
         <li><a href="#">about</a></li>
         <li><a href="#">contact</a></li>
-        <li><a href="profile.html" disabled> profile </a></li>
-        <li><a href="index.html">sign out </a> </li>
+        <li><a href="{% url 'profile' %}" disabled> profile </a></li>
+        <li><a href="{% url 'index' %}">sign out </a> </li>
       </ul>
     </div>
   </div>
@@ -47,15 +47,15 @@
       <h3><strong> Student Profile </strong></h3>
       <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="profile-pic">
       <div class="basic-info">
-        <div class="name"> Name: </div>
-        <div class="email"> Email id: </div>
-        <div class="name"> Gender: </div>
-        <div class="name"> Contact: </div>
-        <div class="name"> Address: </div>
-        <div class="name"> Qualification: </div>
-        <div class="name"> University: </div>
+        {% for u in u1 %}
+        {% if u.username == user.username %} 
+        <div class="name"> Name: {{u.full_name}}</div>
+        <div class="email"> Email id: {{u.email}}</div>
+        <div class="name"> University: {{u.university}}</div>
 
       </div>
+      {% endif %}
+      {% endfor %}
       <hr>
 
       <div class="live-courses">
