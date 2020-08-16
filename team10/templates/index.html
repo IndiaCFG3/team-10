@@ -63,62 +63,7 @@
 
 	</div>
 	<hr color= "black">
-	{% if user.is_authenticated %}
-	<h3><strong> Course Details </strong></h3>
-	<form action="{% url 'coursedetails' %}" method="POST">
-	  {% csrf_token %}
-	  <div class="form-group input-group mb-3">
-		<label for="coursename"></label>
-		<div class="input-group-prepend">
-		  <span><i class="fa fa-user" aria-hidden="true"></i></span>
-		</div>
-		<input type="text" class="form-control" id="coursename" name="coursename" placeholder="Course Name" required>
-	  </div>
-	  <div class="form-group input-group mb-3">
-		  <label for="coursedescription"></label>
-		  <div class="input-group-prepend">
-			<span><i class="fa fa-user" aria-hidden="true"></i></span>
-		  </div>
-		  <input type="text" class="form-control" id="coursedescription" name="coursedescription" placeholder="Course Description" required>
-		</div>
 
-	  <div class="form-group input-group mb-3">
-		<label for="videolink"></label>
-		<div class="input-group-prepend">
-		  <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-		</div>
-		<input type="text" class="form-control" id="videolink" name="videolink" placeholder="Video Link" required>
-	  </div>
-	  <div class="form-group input-group mb-3">
-		<label for="pdfdrivelink"></label>
-		<div class="input-group-prepend">
-		  <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-		</div>
-		<input type="text" class="form-control" id="pdfdirivelink" name="pdfdrivelink" placeholder="Pdf Drive Link" required>
-	  </div>
-	  <div class="form-group input-group mb-3">
-		<label for="Choose Category"></label>
-		<div class="input-group-prepend">
-		  <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-		</div>
-		<select id="category" name="category">
-			<option value="choose" disabled selected hidden class="choose">Choose Course Category</option> 
-			<option value="Html" name='Html'>HTML</option>
-			<option value="Css" name='Css'>CSS</option>
-			<option value="Raspberry" name='Raspberry'>Raspberry</option>
-			<option value="Nodejs" name='nodejs'>Node Js</option>
-			<option value="Thermodynamics" name='Thermodynamics'>Thermodynamics</option>
-			<option value="Others" name='Others'>Others</option>
-		  </select>
-	  </div>
-
-
-	  <button type="submit" class="btn btn-primary">upload</button>
-	  <hr>
-	  <p>Already have an account? <a href="{% url 'adminlogin' %}"> Login </a></p>
-
-	</form>
-	{% endif %}
 
 	<div class="row column">
 		<h3>We operate in</h3>

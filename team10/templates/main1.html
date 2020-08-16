@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../static/css/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
+
+  <title>Admin Page</title>
+</head>
+<body>
+  <div id="btn-signout">
+    <a class="btn btn-outline-light" href="index.html" role="button"> Sign Out </a>
+  </div>
+  <h2>Admin Page</h2>
+  <div class="container">
+    {% load static %}
+    <h3><strong> Course Details </strong></h3>
+    <form action="{% url 'coursedetails' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group input-group mb-3">
+        <label for="coursename"></label>
+        <div class="input-group-prepend">
+          <span><i class="fa fa-user" aria-hidden="true"></i></span>
+        </div>
+        <input type="text" class="form-control" id="coursename" name="coursename" placeholder="Course Name" required>
+      </div>
+      <div class="form-group input-group mb-3">
+        <label for="coursedescription"></label>
+        <div class="input-group-prepend">
+          <span><i class="fa fa-user" aria-hidden="true"></i></span>
+        </div>
+        <input type="text" class="form-control" id="coursedescription" name="coursedescription" placeholder="Course Description" required>
+      </div>
+
+      <div class="form-group input-group mb-3">
+        <label for="videolink"></label>
+        <div class="input-group-prepend">
+          <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+        </div>
+        <input type="text" class="form-control" id="videolink" name="videolink" placeholder="Video Link" required>
+      </div>
+      <div class="form-group input-group mb-3">
+        <label for="pdfdrivelink"></label>
+        <div class="input-group-prepend">
+          <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+        </div>
+        <input type="text" class="form-control" id="pdfdirivelink" name="pdfdrivelink" placeholder="Pdf Drive Link" required>
+      </div>
+      <div class="form-group input-group mb-3">
+        <label for="Choose Category"></label>
+        <div class="input-group-prepend">
+          <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+        </div>
+        <select id="category" name="category">
+          <option value="choose" disabled selected hidden class="choose">Choose Course Category</option> 
+          <option value="Html" name='Html'>HTML</option>
+          <option value="Css" name='Css'>CSS</option>
+          <option value="Raspberry" name='Raspberry'>Raspberry</option>
+          <option value="Nodejs" name='nodejs'>Node Js</option>
+          <option value="Thermodynamics" name='Thermodynamics'>Thermodynamics</option>
+          <option value="Others" name='Others'>Others</option>
+        </select>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Upload</button>
+      <hr>
+
+
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

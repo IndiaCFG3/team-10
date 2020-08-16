@@ -1,0 +1,168 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  </head>
+  <body>
+
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="row">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">Your course</li>
+           <!-- <li class="has-submenu">
+              <a href="#">One</a>
+              <ul class="submenu menu vertical" data-submenu>
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>-->
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><input type="search" placeholder="Search"></li>
+            <li><button type="button" class="button">Search</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+    <br>
+    <!-- You can now combine a row and column if you just need a 12 column row -->
+    <!--<div class="row columns">
+      <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li class="disabled">Gene Splicing</li>
+          <li>
+            <span class="show-for-sr">Current: </span> Cloning
+          </li>
+        </ul>
+      </nav>
+    </div>-->
+
+    <div class="row">
+      <div class="medium-6 columns">
+        <img class="thumbnail" src="https://placehold.it/650x350">
+      </div>
+      <div class="medium-6 large-5 columns">
+        <h3>Web Design - HTML</h3>
+        <p>HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the web pages.</p>
+
+        <label>Choose
+        <select>
+          <option value="husker">videos</option>
+          <option value="starbuck">quiz</option>
+        </select>
+        </label>
+
+       <!-- <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Quantity</label>
+          </div>
+          <div class="small-9 columns">
+            <input type="text" id="middle-label" placeholder="One fish two fish">
+          </div>
+        </div>-->
+
+        <a href="#" class="button large expanded">Learn Now</a>
+
+        <!--<div class="small secondary expanded button-group">
+            <a class="button">Facebook</a>
+            <a class="button">Twitter</a>
+            <a class="button">Yo</a>
+          </div>-->
+        </div>
+    </div>
+
+    <div class="column row">
+      <hr>
+      <ul class="tabs" data-tabs id="example-tabs">
+        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Lectures</a></li>
+        <li class="tabs-title"><a href="#panel2">Quizzes</a></li>
+      </ul>
+      <div class="tabs-content" data-tabs-content="example-tabs">
+        <div class="tabs-panel is-active" id="panel1">
+          <h4>Lectures</h4>
+          {% for c in c1 %}
+          {% if c.category == 'Html' %}
+          <div class="media-object stack-for-small">
+            <div class="media-object-section">
+              <iframe width="560" height="315" src="{{c.videolink}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="media-object-section">
+              <h5>Coursename : {{c.coursename}}</h5>
+              <p>Description: {{c.description}}</p>
+              <a href="{{c.pdfdrivelink}}">Drive link: {{c.pdfdrivelink}}</a>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          
+
+          <label>
+            Your feedback is valuable.
+            <textarea placeholder="None"></textarea>
+          </label>
+          <button class="button">Submit Feedback</button>
+        </div>
+        <div class="tabs-panel" id="panel2">
+          <div class="row medium-up-3 large-up-5">
+            <div class="column">
+              <!--<img class="thumbnail" src="https://placehold.it/350x200">-->
+              <h5>Quiz 1 <small> Easy</small></h5>
+              <p>IThe topics covered are introduction and the basic tags. Consits of 10 MCQs, one mark each.</p>
+              <a href="#" class="button hollow tiny expanded"><form><h6>Completed?</h6> <input type="checkbox"></form></a>
+            </div>
+            <div class="column">
+              
+              <h5>Quiz 2 <small>Intermediate</small></h5>
+              <p>The topics covered are specific to the tags needed for making a list in HTML. Consists of 8 fill ups, two marks each.</p>
+              <a href="#" class="button hollow tiny expanded"><form><h6>Completed?</h6> <input type="checkbox"></form></a>
+            </div>
+            <div class="column">
+              
+              <h5>Quiz 3 <small>Intermediate</small></h5>
+              <p>The topics covered are specific to the tags needed for making a list in HTML. Consists of 8 fill ups, two marks each.</p>
+              <a href="#" class="button hollow tiny expanded"><form><h6>Completed?</h6> <input type="checkbox"></form></a>
+            </div>
+            <div class="column">
+              
+              <h5>Quiz 4 <small>Hard</small></h5>
+              <p>The topics covered are specific to the tags needed for making a form in HTML. Consists of 8 fill ups, two marks each.</p>
+              <a href="#" class="button hollow tiny expanded"><form><h6>Completed?</h6> <input type="checkbox"></form></a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row column">
+      <hr>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

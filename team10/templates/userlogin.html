@@ -17,7 +17,7 @@
 <body>
   <div id="log">
 
-    <h1 class="logo"><strong> Site Name </strong></h1>
+    <h1 class="logo"><strong> TISS </strong></h1>
     <div class="container">
       <h3><strong> USER - LOGIN </strong></h3>
       <form action="userlogin" method="POST"> 
@@ -30,12 +30,12 @@
           <input type="email" class="form-control" id="Email" name="email" placeholder="Email address" required>
         </div>
         <div class="form-group input-group mb-3">
-            <label for="Email"></label>
-            <div class="input-group-prepend">
-              <span><i class="fa fa-user" aria-hidden="true"></i></span>
-            </div>
-            <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
+          <label for="Email"></label>
+          <div class="input-group-prepend">
+            <span><i class="fa fa-user" aria-hidden="true"></i></span>
           </div>
+          <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
+        </div>
 
         <div class="form-group input-group mb-3">
           <label for="Password"></label>
@@ -54,7 +54,7 @@
         {% for message in messages %}
         <h3 style="font-size: 15px; color:red; padding-top:25px;text-align:center; padding-bottom:20px;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{message}}</h3>
         {% endfor %}
-    </div>
+      </div>
     </div>
   </div>
 

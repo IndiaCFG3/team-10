@@ -46,7 +46,7 @@ def adminlogin(request):
         if user is not None:
             if username in l:
                 auth.login(request,user)
-                return render(request,'index.html')
+                return render(request,'main1.html')
             else:
                 messages.info(request,'you are not an admin')
                 return redirect('adminlogin')
@@ -126,3 +126,18 @@ def coursedetails(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+def html(request):
+    c1=courses.objects.all()
+    return render(request,'html.html',{'c1':c1})
+def css(request):
+    return render(request,'css.html')
+def nodejs(request):
+    return render(request,'nodejs.html')
+def raspberry(request):
+    return render(request,'raspberry.html')
+def thermodynamics(request):
+    return render(request,'thermodynamics.html')
+def others(request):
+    return render(request,'others.html')
+def main1(request):
+    return render(request,'main1.html')

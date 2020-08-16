@@ -16,7 +16,7 @@
 </head>
 <body>
   <div id="sign">
-    <h1 class="logo"><strong> Site Name </strong></h1>
+    <h1 class="logo"><strong> TISS </strong></h1>
     <div class="container">
       <h3><strong> USER - SIGN UP </strong></h3>
       <form action="usersignup" method="POST">
@@ -30,12 +30,12 @@
         </div>
 
         <div class="form-group input-group mb-3">
-            <label for="Name"></label>
-            <div class="input-group-prepend">
-              <span><i class="fa fa-user" aria-hidden="true"></i></span>
-            </div>
-            <input type="text" class="form-control" id="Name" name="username" placeholder="User Name" required>
+          <label for="Name"></label>
+          <div class="input-group-prepend">
+            <span><i class="fa fa-user" aria-hidden="true"></i></span>
           </div>
+          <input type="text" class="form-control" id="Name" name="username" placeholder="User Name" required>
+        </div>
 
         <div class="form-group input-group mb-3">
           <label for="Email"></label>
@@ -45,12 +45,12 @@
           <input type="email" class="form-control" id="Email" name="email" placeholder="Email Address" required>
         </div>
         <div class="form-group input-group mb-3">
-            <label for="University"></label>
-            <div class="input-group-prepend">
-              <span><i class="fa fa-university" aria-hidden="true"></i></span>
-            </div>
-            <input type="text" class="form-control" id="university" name="university" placeholder="University Name" required>
+          <label for="University"></label>
+          <div class="input-group-prepend">
+            <span><i class="fa fa-university" aria-hidden="true"></i></span>
           </div>
+          <input type="text" class="form-control" id="university" name="university" placeholder="University Name" required>
+        </div>
         <div class="form-group input-group mb-3">
           <label for="Password"></label>
           <div class="input-group-prepend">
@@ -75,7 +75,7 @@
         {% for message in messages %}
         <h3 style="font-size: 15px; color:red; padding-top:25px;text-align:center; padding-bottom:20px;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{message}}</h3>
         {% endfor %}
-    </div>
+      </div>
     </div>
   </div>
 
