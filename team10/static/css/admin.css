@@ -1,0 +1,32 @@
+body
+{
+	background: #FEAC5E;
+	background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); 
+	background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); 
+	font-family: Zilla Slab;
+}
+h2
+{
+	text-align:center;
+}
+.container
+{
+	text-align: center;
+	background-color: rgba(255,255,255,0.7);
+	margin: 2.25% auto;
+	width: 600px;
+	border-radius: 1.5em;
+	box-shadow: 3px 3px 4px 1.5px rgba(0, 0, 0, 0.2);
+}
+.form-group
+{
+	border-radius: 10% 10%;
+}
+button
+{
+	box-shadow: 2px 2px 4px 1.5px rgba(0,0,230,0.4);
+}
+#btn-signout
+{
+	margin: 1% 0 0 80%;
+}
