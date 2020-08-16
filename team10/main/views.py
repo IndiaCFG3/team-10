@@ -60,6 +60,7 @@ def usersignup(request):
         fullname=request.POST['fullname']
         username=request.POST['username']
         email=request.POST['email']
+        university=request.POST['university']
         password1=request.POST['password1']
         password2=request.POST['password2']
         l=[]
@@ -70,7 +71,7 @@ def usersignup(request):
             if username not in l:
                 user=User.objects.create_user(username=username,password=password1,email=email)
                 user.save()
-                userSignup.objects.create(username=username,full_name=fullname,email=email,password=password1)
+                userSignup.objects.create(username=username,full_name=fullname,email=email,university=university,password=password1)
                 return redirect('userlogin')
             else:
                 messages.info(request,'username already exists')
@@ -94,7 +95,7 @@ def userlogin(request):
         if user is not None:
             if username in l:
                 auth.login(request,user)
-                return render(request,'index.html')
+                return render(request,'main.html')
             else:
                 messages.info(request,'you are not a user')
                 return redirect('userlogin')
@@ -103,3 +104,13 @@ def userlogin(request):
             return redirect('userlogin')
     else:
         return render(request,'userlogin.html')
+def main(request):
+    return render(request,'main.html')
+def profile(request):
+    u1=userSignup.objects.all()
+    return render(request,'profile.html',{'u1':u1})
+def schedule(request):
+    return render(request,'schedule.html')
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
