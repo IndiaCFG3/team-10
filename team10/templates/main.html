@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome</title>
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <style>
     body
     {
@@ -12,6 +13,15 @@
       background: -webkit-linear-gradient(to right, #CB3066, #16BFFD); 
       background: linear-gradient(to right, #CB3066, #16BFFD); 
       background: cover;
+      text-align:center;
+    }
+    .btn-success
+    {
+      background-color: green;
+    }
+    .btn-success:hover
+    {
+      background-color: red;
     }
     
   </style>
@@ -29,9 +39,11 @@
       <ul class="menu">
         <li><a href="{% url 'main' %}" disabled>home</a></li>
         <li><a href="#">about</a></li>
+
         <li><a href="#">contact</a></li>
         <li><a href="{% url 'profile' %}"> profile </a></li>
         <li><a href="{% url 'logout' %}">sign out </a> </li>
+
       </ul>
     </div>
   </div>
@@ -47,145 +59,131 @@
       <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbZo-9VYrjxYUifbUHJyFdkawSZ1x8B4TqNQ&usqp=CAU">
       <h5>resume course</h5>
       <p>the course name</p>
-      <a href="#" class="button expanded">choose</a>
+      <a href="#" class="button expanded btn-success">Choose</a>
     </div>
     <div class="column">
       <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRQWEaDcerWtigeIXDaD-9IMBNQYh7X9bXLBA&usqp=CAU">
       <h5>Domain?</h5>
       <p>Let us get started by choosing your field of interest</p>
-      <a href="#" class="button expanded">choose</a>
+
+
+      <div class="dropdown">
+        <button class="button expanded btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Courses
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">HTML</a>
+          <a class="dropdown-item" href="#">CSS</a>
+          <a class="dropdown-item" href="#">Node JS</a>
+          <a class="dropdown-item" href="#">Raspberry pi</a>
+          <a class="dropdown-item" href="#">Thermodynamics</a>
+          <a class="dropdown-item" href="#">Others</a>
+        </div>
+      </div>
     </div>
-    
+
     <div class="column">
       <img class="thumbnail" src="https://midtowntrainers.com/wp-content/uploads/2018/10/simpleicons_business_calendar-with-plus-sign-svg_-400x400.png">
       <h5>Schedule</h5>
       <p>live sessions</p>
-      <a href="{% url 'schedule' %}" class="button expanded">choose</a>
-    </div>
 
+      <a href="{% url 'schedule' %}" class="button expanded">Choose</a>
+
+    </div>
 
   </div>
 
   <hr>
 
-   <!-- <div class="row column text-center">
-      <h2>Some Other features</h2>
+
+  <div class="row">
+    <div class="row large-15">
+      <h4>Suggested SKills</h4>
       <hr>
-    </div>
+      <div class="media-object">
+        <div class="media-object-section">
+          <img class="thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAzFBMVEXjTyb////vZSrr6+vpWijtYSnr8PHjQwvuWg761czvYR7jRxbowrz++fb5y7/mnpDjSx7r5ePhPgDouLD2sZ3leGDiSRviRhXlUybvYSHuVwDiQQb76OT98/DhOgD6497xrqH73NLtm4vqgWryt6vpzsj0wbboc1jjUir60cTvpJXrinXtlIDlXjzmZkXou7Pzk3Hq2NTnrqP4wK7wckD1pYv0m3z2rpblXj3wqpvoTgryimTxfE7sjXjwbzznbE/5x7jyhl30l3f3uqYaLY6nAAANdElEQVR4nN3da1fbOBAGYEJpnGACxhQHCCSQcIdAoVxLKez2//+ntaE9pNLMvPJYihfm256zpH6wsV6kkZhpTNZqMvP+q3f0l2nmr/86yeq+PA+VDgThMK778jxUuikId7t1X56H6nYE4X5U9+V5qKQhCNu9ui/PQ40l4SCt+/KqV/IkCTc/gDA7kYSdD/CmiYeSsPEBRvzuvSgcv39itC8Kn96/sNcWhR8gtqU7ovADxDYjtJnC+/f/Mk07ovADxLasIQrDx7a5z55r7e/PT8aycCd4qJmb9Vym8EAWho9twYUjWdh5f0Lj87NTWRg+toUWmqHNEgaPbaGF0S4QHrw34WdTuAiEo9CxLbTQDG2W8DR0bPMtnDOFm0AYPLYFF24B4W7o2BZaGDWAcPG9CxMkDB7bfAvNSHOGhMFjW2ihGdos4VboXy58C42Pt0KbJWy8t59D4+O7x1D43jKNKTRDmy08C0z0LIShzRaO3rcwbUPhaeBgGlo4gMLjwLHNsxCGNlsYehk4sDDuQGHo2BZYeGh6bGE7cKjxLIShzRbiZeCoUn1vVal1JFzFwi0kjM4XqlS7Su3cmETj4swFYErYQb/kpxfNKmVdQam6nZeFsRXabGHjEAh7e5+qVDXhDRB2tx2EKLZFC836hA/gKTUXgEkh6t6LzmsU/jCEOLQRwkcQ27qXNQp/zgKhFdoIIYpt8VKNQnOwwKGNEG4j4bA+Ycd80ZjCvv01thAtA2cn9Qm3WugeughRbEsO6hMONgyhEWmIWEoIUWxLxvUJj8x7iBaASeFWXxbOHNYnfDaFxqVljy7CBhJmy7UJYWgb2l9DCNGMaXRRm1AR2ighWgZO6xMqQhslRMvA1YJpJeGVATQjjbHVghOi2Bat1CY0H1K4AEwLUfdetWBaSWgOhw6hjRKGjW1VgJtIGFkzbaQwbGyrItxBoY3QUELUvZes1iWEkcbs2mOEMLad1SX8hoRPxBcRQjjbtlaX8AsY8DNrAZgRonn9tC7htSK0UUI425aywXQZV0dfja8g0lhde5zwThvbmqdRhmpuXl+zZhkXZnXtcUK06aLHxbbmEl648rluYYU2awGYEaLuPTa2NS/rFVKhjRSqY1tzAS/N+RTCrj1OCGMbN5/Y3MPdOCGFfSK0kULUvZc9csPFBV58DHoPCQwpPFLHtuV6hcRMGy1E3XtCbMONHD6FLqGNFMLuPX4+cVynkAxtpLCDZtsSLtQ08f5Fn0Ljo+2uPU7YgAvdrBAfrBFQaHftsUIYTNnYhndoBhSSoY0WVohtsNXfoxB37bFCGNu4ZWCH2BZQSCwAc0LUvcfHthUY20IKqdBGC9XLwA7B1KPQmmkj5hIZoT624WAaUJhQsZQWou69ZMQG0zqFZGijhfrYtjzNpxR37bFCGNvY2bbmNN+luGuPFW6hO8HOtjVRWPApND6ZDm20sIOyFzvbhoNpOCEd2mhhhdgGW/0DCokFYFaIuvd6e9yACFv9wwmpBWBWqO7eay71g/UIm0C30MYI1bHt08UKqEV1QaHdtccLK3TvhesRRouHfTK0MUK06SI7VS/OqIFwAZicaeOEMLbpF0nVQmt51BSulRHC7r2n6Qvh8igd2hhhwO49tdBaPHQLbYwQdu+taYF6IeqHIrZaCEL9bFs4odkP5bQAzAsBsEJvm1porY8al8SENk6ojm3hhFamMR8rOrRxQhjb1N17WqDV4m0tANOhjROimV19b5tWuImETGjjhGgZWL/pQiuEHV/0XCIrDBfbtMJFJOzSsZQThuve0wqtSAMPNZGFsHtPHdu0Qqvjy9xqQXXtCUK4V1a9JUErhKGNXADmhXA+sTttIer44kIbJ4RHJqtjm1b4DxByoY0TwiNOetrYphWiWEp27UlCtOlCvRtYKzRvobU8yoQ2VohmdtWxTQnsmHMYrqGNFQaLbUrhFhKSXXuSEHbv3U9XqA5trBCdvRcPp3viQBsKyeVRQYhiW/K0pKv7L1J944TWzkPX0MYK4ZHJSayq7nepzbn1wF3nL7DHmdxqIQqDnb0nrszMX3PXCUMbsT9WFgY7e08WfuGu09pbCc/aQ8JgRyaLwhb7c4hCG7MALAiDnUwnC7lhWx/aeCHadBFGyMy12MdFuHXticJQRyaLwg1mJsI+LsKta08UhjoyWRZyVwPnEtnQxgtDHZksv0u5q7EWD9269kQh2nQRRHjFXQ2OpdzzzQvxkckJV2rhOhtp4FyidUAyFuKz91aZkn+1lITzN9zVqOcSBSGcbYu5poQ98XsjCm+5q0FzidwCsCSEsY09HkPuMZWEfKTRhzZeCI9MZpcQ5c1PopAd1OBcIhvaeCE8MpmfqdELd7iLQbGU6dqThQAo7LMUs4Ik3GAHNfMUM3xAsoMQLQPzDfviTKR4D9lBDS1x86FNEKI+Sr5hX4y04ojPXgyMNOwvJYIQde+xS4jy1iBJ+JO7Fhza2F9KBCHq3mMb9ptipBWE6z+4a6kQ2gQhWgZme9vkPeuS8Ct3LXAu0T4g2UEIu/e4LQny5idByM9DwblEeqsFEMIjk7lF0ua59L2RhOw8VIXQJghxbKOBILYJwtYzdy3arj1ZCGfb2C0JYmyThOwr/18U2oiz9hyE+MhkRrisfJfy81AVQpsgbKB92fwiqfRVgpCdh8JziUzXHhCqF0mb0vdGErKXYv2v5qVwC8CyEHbvsdFb+t5ImYa7EjiXKIQ2SQiPTN7mhKvCDyIv5CMNnkvkQ5sk1O+VvRynEfftYYTrrY2f7HCINyLwoU0S6rv3ms2LlZPDtEs9rIRwfX5j9us39ndDh1hKHJDsIoTLwOxe2Rdkc297tdeLTeWcqWtt/PNLeMiKgnOJzGYSJKy86aLZ/LSwdBb9/cBOCudbratr4SXxp9BWC7ZrDwh9bLrIb+Xy+ePaxAP7R5g/mvM3z8LPz0RZh+s6LwDLQl9HJufKi8vRTPr6wM69PprzD9IPnlHocF0ptElCeGQye4gL+cDuLT31ojiZyx/NH7c7zrqi0Fwi27WHhPDI5HL9ifkDuzC8G18f8b+tMmX+RYQyoU0U+j8yWdkxZPjcu/aQEC0Dq7aVaITqrj0khEcma/6WhwII+xKl0CYKgxyZrBBWCm2iEC0Ds9HbsxCGNuqAZCchim2qQ6EVQjiXKMy0yULUvafaVqIQogXg5E4rhLFNit4ehXAukdtqAYXoyGTVxhmFEM0l0mftuQjhpgvNfmeFsFJoE4XwiJN4OkIY2tiuPSiERyYXiTq8EC0A8117UIi790aXxV/SCyjcWryZRZtJqL9q4SjE3XtJlI6HC8slkGV4O7dXGy37jGv3rj0oRLHtFRn34oPtPddb6arb/Paw3pq3/mYlKRR/lxaFaNPFm7KbZicryy5KF13n6Hp2w/6LnH/K6YBkNyHu3puoLIrOlhbguwfyBl9+tIhHUxBKM21ACDddmLcy7kWr4N0jXs3W87+tDfrRFIRiLJWFmk0XSbd3eHrOv3uE7+f1FfHHYokqFdpkoXbTRRalT0vMu4f+lwa/HsCjyQvl0CYL4ZHJfOUPbEIOlva/Ugx5zFuTLvP7yXftQSE8xAUou+nd0Hz3GP/Czu0PasgrI5QWgKEQnoIIkXEU5YPlhHLi0/Mhr1Xq5tFCObQBIT6e20XZTQ/fBsvfn5wPeT+FIa+UkO/aw0Jvmy7yd8/d62BZfGw+5JV+NN+qXGgDQngKYokq3j35YNl5/jqLh7xSQnkBRBaiZeDSym76XflovpXbAcmOwlKxza2qn33pdkCyoxBvuvgfCOXQBoQB9spWF5bo2sPCAHtl/QuFrj0shEcm1yE0PhCENiCERyb/D4QgtAFh9djmXfjZOgFLDm1IiDZdTFlo8WbAAjAW4r+qMjXh5zmzi+a1pK49B6HP2FZFyOhehKChCgh9xzaNkHo0J4o5INlViLr3Qgu5R3Oi5Jk2KPQf29yFDrqimAOSXYVw00UoIXg03wqFNiSEu4FDCB1v3m8hCG1ICLv3vAvL6Ipiz9pzFFacbSspLHXzfpe8AOwgLP9PKoUaXVEotEHhOPKcakih83vFqqwPQhsUDrYP0p7PYGMJtTfvZdZn5nEf9XIiYV6dxVOm7766UK2biXvRwTYIbK7Coga7q327776aUP9oJt3+4emRW4+4q7Co9nCcVv+pnKv4aM7Eaby6694jXkaY12Z+K9Nqt3Kuii6L+ofDdrku6nLCotrDuyq3Uq0regVGZW6eWpjX5v4o8vfucaksSsfHO5pr1QmLah+f9dntW16rGBRO9h3fKx6FeW3tj7LQtzLr9Z7uXQaFIMKido6fgt3KlxF9UX3zPAkbxa08mfF/K+PUcURH5UFY1ODe5618GdFLDgpseRI2inD36CPcJXGalRrRUfkTFjXYfur3Mr1SM6Kj8itsVMjp+XslGe17vHm/y7uwqMFu/itXqXBXdDIoR3RUQYR5dfKc3ne7lRVHdFShhEXlOb2Lcnr1ER1VSGFRxa3kcvrLoFB5REcVWtgobiUV7uK062dERzUFYVHt47uJRJAEGBTYmpKw8RLukvxWeh/RUU1PWNRg++Ds3uGIAZ/1H39Arh5B1jGPAAAAAElFTkSuQmCC">
+        </div>
+        <div class="media-object-section">
+          <h5>HTML</h5>
+          <p>HTML is very easy to learn and understand. For the one who is learning web development, HTML is the first and foremost language that the person will go through.</p>
+        </div>
+      </div>
+      <div class="media-object">
+        <div class="media-object-section">
+          <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUD6CsFQB-dRTehB2nXvUA2nJ7ZGttVsJnAA&usqp=CAU">
+        </div>
+        <div class="media-object-section">
+          <h5>Marketing</h5>
+          <p>Marketing skills contribute to business success because they allow for insight into customer behaviour and marketing campaign results.</p>
+        </div>
+      </div>
+      <div class="media-object">
+        <div class="media-object-section">
+          <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRD_j2dJRxMD1X0GYTsF8CfeApOXGIxMudaFw&usqp=CAU">
+        </div>
 
-    <div class="row small-up-2 large-up-4">
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>e1</h5>
-        <p>d1</p>
-        <a href="#" class="button small expanded hollow">choose</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>e2</h5>
-        <p>d2</p>
-        <a href="#" class="button small expanded hollow">choose</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>e3</h5>
-        <p>d3</p>
-        <a href="#" class="button small expanded hollow">choose</a>
-      </div>
-      <div class="column">
-        <img class="thumbnail" src="https://placehold.it/300x400">
-        <h5>e5</h5>
-        <p>d5</p>
-        <a href="#" class="button small expanded hollow">choose</a>
-      </div>
-    </div> -->
+        <div class="media-object-section">
+          <h5>Accounting</h5>
+          <p> Accounting skills enable managers to achieve a company's goals by assessing and evaluating the success or failures of the business's efforts.</p>
+        </div>
 
-    
-    <div class="row">
-      <div class="row large-15">
-        <h4>Suggested SKills</h4>
-        <hr>
-        <div class="media-object">
-          <div class="media-object-section">
-            <img class="thumbnail" src="data:image/png;base64,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">
-          </div>
-          <div class="media-object-section">
-            <h5>HTML</h5>
-            <p>HTML is very easy to learn and understand. For the one who is learning web development, HTML is the first and foremost language that the person will go through.</p>
-          </div>
-        </div>
-        <div class="media-object">
-          <div class="media-object-section">
-            <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUD6CsFQB-dRTehB2nXvUA2nJ7ZGttVsJnAA&usqp=CAU">
-          </div>
-          <div class="media-object-section">
-            <h5>Marketing</h5>
-            <p>Marketing skills contribute to business success because they allow for insight into customer behaviour and marketing campaign results.</p>
-          </div>
-        </div>
-        <div class="media-object">
-          <div class="media-object-section">
-            <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRD_j2dJRxMD1X0GYTsF8CfeApOXGIxMudaFw&usqp=CAU">
-          </div>
-          
-          <div class="media-object-section">
-            <h5>Accounting</h5>
-            <p> Accounting skills enable managers to achieve a company's goals by assessing and evaluating the success or failures of the business's efforts.</p>
-          </div>
-          
-        </div>
-        <div class="media-object">
-          <div class="media-object-section">
-            <img class="thumbnail" src="data:image/png;base64,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">
-          </div>
-          
-          <div class="media-object-section">
-            <h5>MySQL</h5>
-            <p>Get a step ahead in Developement arena with this course covering all the required knowledge for competitive coding, knowing the database, managing a database and a lot more! </p>
-          </div>
-          
-        </div>
       </div>
-      
+      <div class="media-object">
+        <div class="media-object-section">
+          <img class="thumbnail" src="data:image/png;base64,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">
+        </div>
+
+        <div class="media-object-section">
+          <h5>MySQL</h5>
+          <p>Get a step ahead in Developement arena with this course covering all the required knowledge for competitive coding, knowing the database, managing a database and a lot more! </p>
+        </div>
+
+      </div>
     </div>
 
   </div>
 
-  <div class="callout large secondary">
-    <div class="row">
-      <div class="media-object-section">
-        <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSw2jD267YVMDferxkMFm_KJg5K61hPVnsQ_A&usqp=CAU">
-      </div>
-      <div class="large-4 columns">
-        <h5>THANK YOU</h5>
-        <p>To serve is beautiful, but only if it is done with joy and a whole heart and a free mind.</p>
-      </div>
+</div>
 
-      <div class="large-3 large-offset-2 columns">
-        <ul class="menu vertical">
-          <li><a href="#">FaceBook - TISS_SVE</a></li>
-          <li><a href="#">Instagram - @life_tiss</a></li>
-          <li><a href="#">Twitter - @TISSpeak</a></li>
-        </ul>
-      </div>
+<div class="callout large secondary" id="contact">
+  <div class="row">
+    <div class="media-object-section">
+      <img class="thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSw2jD267YVMDferxkMFm_KJg5K61hPVnsQ_A&usqp=CAU">
+    </div>
+    <div class="large-4 columns">
+      <h5>THANK YOU</h5>
+      <p>To serve is beautiful, but only if it is done with joy and a whole heart and a free mind.</p>
+    </div>
 
-      <div class="large-3 columns">
-        <ul class="menu vertical">
-          <li><a href="#">Tata Institute of Social Sciences
+    <div class="large-3 large-offset-2 columns">
+      <ul class="menu vertical">
+        <li><a href="#">FaceBook - TISS_SVE</a></li>
+        <li><a href="#">Instagram - @life_tiss</a></li>
+        <li><a href="#">Twitter - @TISSpeak</a></li>
+      </ul>
+    </div>
 
-          </a></li>
-          <li><a href="#"> V.N. Purav Marg</a></li>
-          <li><a href="#"> Deonar, Mumbai-400088</a></li>
-          <li><a href="#">+91(22)25525000</a></li>
-        </ul>
-      </div>
+    <div class="large-3 columns">
+      <ul class="menu vertical">
+        <li><a href="#">Tata Institute of Social Sciences
+
+        </a></li>
+        <li><a href="#"> V.N. Purav Marg</a></li>
+        <li><a href="#"> Deonar, Mumbai-400088</a></li>
+        <li><a href="#">+91(22)25525000</a></li>
+      </ul>
     </div>
   </div>
+</div>
 
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script>
+  $(document).foundation();
+</script>
 </body>
 </html>
