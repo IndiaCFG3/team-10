@@ -74,6 +74,11 @@
         <p>Already have an account? <a href="{% url 'adminlogin' %}"> Login </a></p>
 
       </form>
+      <div>
+        {% for message in messages %}
+        <h3 style="font-size: 15px; color:red; padding-top:25px;text-align:center; padding-bottom:20px;"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{message}}</h3>
+        {% endfor %}
+    </div>
     </div>
   </div>
 

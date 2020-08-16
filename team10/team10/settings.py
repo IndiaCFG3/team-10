@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'team10.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'adpost',
+        'NAME': 'tiss',
         'USER':'postgres',
         'PASSWORD':'Rgsv1234',
         'HOST':'localhost'
