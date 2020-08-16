@@ -72,12 +72,12 @@
           Courses
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">HTML</a>
-          <a class="dropdown-item" href="#">CSS</a>
-          <a class="dropdown-item" href="#">Node JS</a>
-          <a class="dropdown-item" href="#">Raspberry pi</a>
-          <a class="dropdown-item" href="#">Thermodynamics</a>
-          <a class="dropdown-item" href="#">Others</a>
+          <a class="dropdown-item" href="{% url 'html' %}">HTML</a>
+          <a class="dropdown-item" href="{% url 'css' %}">CSS</a>
+          <a class="dropdown-item" href="{% url 'nodejs' %}">Node JS</a>
+          <a class="dropdown-item" href="{% url 'raspberry' %}">Raspberry pi</a>
+          <a class="dropdown-item" href="{% url 'thermodynamics' %}">Thermodynamics</a>
+          <a class="dropdown-item" href="{% url 'others' %}">Others</a>
         </div>
       </div>
     </div>
