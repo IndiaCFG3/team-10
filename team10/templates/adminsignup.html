@@ -29,22 +29,29 @@
     <h1 class="logo"><strong> Site Name </strong></h1>
     <div class="container">
       <h3><strong> Admin - SIGN UP </strong></h3>
-      <form>
-
+      <form action="adminsignup" method="POST">
+        {% csrf_token %}
         <div class="form-group input-group mb-3">
           <label for="Name"></label>
           <div class="input-group-prepend">
             <span><i class="fa fa-user" aria-hidden="true"></i></span>
           </div>
-          <input type="text" class="form-control" id="Name" placeholder="Full Name" required>
+          <input type="text" class="form-control" id="Name" name="fullname" placeholder="Full Name" required>
         </div>
+        <div class="form-group input-group mb-3">
+            <label for="Name"></label>
+            <div class="input-group-prepend">
+              <span><i class="fa fa-user" aria-hidden="true"></i></span>
+            </div>
+            <input type="text" class="form-control" id="Name" name="username" placeholder="User Name" required>
+          </div>
 
         <div class="form-group input-group mb-3">
           <label for="Email"></label>
           <div class="input-group-prepend">
             <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
           </div>
-          <input type="email" class="form-control" id="Email" placeholder="Email Address" required>
+          <input type="email" class="form-control" id="Email" name="email" placeholder="Email Address" required>
         </div>
 
         <div class="form-group input-group mb-3">
@@ -52,19 +59,19 @@
           <div class="input-group-prepend">
             <span><i class="fa fa-lock" aria-hidden="true"></i></i></span>
           </div>
-          <input type="password" class="form-control" id="Password" placeholder="Password" required>
+          <input type="password" class="form-control" id="Password" placeholder="Password" name="password1" required>
         </div>
         <div class="form-group input-group mb-3">
           <label for="ConfirmPassword"></label>
           <div class="input-group-prepend">
             <span><i class="fa fa-lock" aria-hidden="true"></i></i></span>
           </div>
-          <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" required>
+          <input type="password" class="form-control" id="ConfirmPassword" name="password2" placeholder="Confirm Password" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Sign Up</button>
         <hr>
-        <p>Already have an account? <a href="login.html"> Login </a></p>
+        <p>Already have an account? <a href="{% url 'adminlogin' %}"> Login </a></p>
 
       </form>
     </div>

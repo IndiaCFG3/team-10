@@ -12,24 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap" rel="stylesheet">
 
-  <style>
-    body
-    {
-      background: #FEAC5E;
-      background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); 
-      background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); 
-
-    }
-  </style>
-
-  <title>Admin - Login</title>
+  <title>User - Login</title>
 </head>
 <body>
   <div id="log">
 
     <h1 class="logo"><strong> Site Name </strong></h1>
     <div class="container">
-      <h3><strong> ADMIN - LOGIN </strong></h3>
+      <h3><strong> USER - LOGIN </strong></h3>
       <form>
         <div class="form-group input-group mb-3">
           <label for="Email"></label>
@@ -38,6 +28,13 @@
           </div>
           <input type="email" class="form-control" id="Email" placeholder="Email address" required>
         </div>
+        <div class="form-group input-group mb-3">
+            <label for="Email"></label>
+            <div class="input-group-prepend">
+              <span><i class="fa fa-user" aria-hidden="true"></i></span>
+            </div>
+            <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
+          </div>
 
         <div class="form-group input-group mb-3">
           <label for="Password"></label>
@@ -49,7 +46,7 @@
 
         <button type="submit" class="btn btn-primary">Login</button>
         <hr>
-        <p>Do not have an account? <a href="signup.html">Sign Up</a></p>
+        <p>Do not have an account? <a href="{% url 'usersignup' %}">Sign Up</a></p>
 
       </form>
     </div>

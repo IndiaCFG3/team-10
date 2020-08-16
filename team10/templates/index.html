@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -22,8 +23,8 @@
 		<div class="row column text-center">
 			<h1>Here for you :)</h1>
 			<p class="lead">some catchy line</p>
-			<a href="admin/login.html" class="button large">Admin</a>
-			<a href="user/login.html" class="button large hollow">User</a>
+			<a href="{% url 'adminlogin' %}" class="button large">Admin</a>
+			<a href="{% url 'userlogin' %}" class="button large hollow">User</a>
 		</div>
 	</div>
 
@@ -31,13 +32,14 @@
 
 	<div class="row">
 		<div class="medium-6 columns medium-push-6">
-			<img class="thumbnail" src="https://placehold.it/750x350">
+			<img class="thumbnail" src="{% static 'https://placehold.it/750x350' %}">
 		</div>
 		<div class="medium-6 columns medium-pull-6">
 			<h2>ngoname</h2>
 			<p>little intro</p>
 		</div>
 	</div>
+
 
 
 	<hr color= "black">
@@ -48,17 +50,17 @@
 
 	<div class="row medium-up-4 large-up-4">
 		<div class="column">
-			<img class="thumbnail" src="https://placehold.it/550x550">
+			<img class="thumbnail" src="{% static 'https://placehold.it/550x550' %}">
 		</div>
 		<div class="column">
-			<img class="thumbnail" src="https://placehold.it/550x550">
+			<img class="thumbnail" src="{% static 'https://placehold.it/550x550' %}">
 		</div>
 		<div class="column">
-			<img class="thumbnail" src="https://placehold.it/550x550">
+			<img class="thumbnail" src="{% static 'https://placehold.it/550x550' %}">
 
 		</div>
 		<div class="column">
-			<img class="thumbnail" src="https://placehold.it/550x550">
+			<img class="thumbnail" src="{% static 'https://placehold.it/550x550' %}">
 
 		</div>
 
